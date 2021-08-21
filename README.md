@@ -27,7 +27,7 @@ pip install opencv-contrib-python
 
 창에 자신의 이름을 입력하면 faces 폴더 안에 자신의 이름의 폴더가 생성됩니다.
 
-카메라를 열어 얼굴 인식 한 후, 500장의 jpg 파일을 생성합니다.
+카메라를 열어 얼굴 인식 한 후, 300장의 jpg 파일을 생성합니다.
 
 
 3. FaceRecognition2.py를 실행하면 생성된 사진을 가지고 학습합니다.
