@@ -49,3 +49,6 @@ pip install opencv-contrib-python
 본 어플리케이션을 웹사이트의 로그인창에 넣어 Unlocked가 2초 이상 지속될 경우 잠금해제를 시킬 예정입니다.
 
 이를 통하여 학생들이 온라인 수업을 듣는 과정을 간소화하고 편리하게 할 수 있을 것으로 보입니다.
+
+
+📌 본 프로젝트는 https://github.com/codeingschool/Facial-Recognition 를 바탕으로 제작되었습니다.
