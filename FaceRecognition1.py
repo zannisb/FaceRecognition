@@ -37,7 +37,7 @@ def take_pictures(name):
             print("Face not Found")
             pass
         
-        if cv2.waitKey(1)==13 or count==500:
+        if cv2.waitKey(1)==13 or count==300:
             break
 
     cap.release()
