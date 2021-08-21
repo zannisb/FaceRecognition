@@ -1,5 +1,5 @@
 # FacialRecognition
-📢 : OpenCV를 이용하여 제작한 얼굴 인식 기능으로, 후 AutoClassroom 이라는 웹사이트에 적용 예정입니다.
+📢 : OpenCV를 이용하여 제작한 얼굴 인식 기능으로, 후 https://autoclassroom.wixsite.com/website 의 웹사이트에 적용 예정입니다.
 
 
 본 어플리케이션은 다음과 같은 과정을 통하여 이용하실 수 있습니다.
