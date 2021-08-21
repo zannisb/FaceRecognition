@@ -1,8 +1,9 @@
 import cv2
+import time
 from os import listdir
 from os.path import isdir, isfile, join
 
-face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')     
+face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')     
 
 def merge():
     data_path = 'faces/'
@@ -18,7 +19,7 @@ def merge():
 
         models[model] = result
 
-    return models    
+    return models
 
 def face_detector(img, size = 0.5):
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -34,8 +35,12 @@ def face_detector(img, size = 0.5):
 
 def run(models):    
     cap = cv2.VideoCapture(0)
+    myTime = 0
     
     while True:
+
+        startTime = time.time()
+
         ret, frame = cap.read()
         image, face = face_detector(frame)
         try:            
@@ -53,26 +58,34 @@ def run(models):
             if min_score < 500:
                 confidence = int(100*(1-(min_score)/300))
                 display_string = str(confidence)+'% Confidence it is ' + min_score_name
-            cv2.putText(image,display_string,(100,120), cv2.FONT_HERSHEY_COMPLEX,1,(250,120,255),2)
-
+            cv2.putText(image,display_string,(50,120), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,1),2)
+            cv2.putText(image, 'cogn_time='+str(round(myTime, 2)), (40, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
             if confidence >= 85:
-                cv2.putText(image, "Unlocked : " + min_score_name, (250, 450), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 2)
+                if myTime >= 2:
+                    cv2.putText(image, "Unlocked : " + min_score_name, (120, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+                    print(min_score_name)
                 cv2.imshow('Face Cropper', image)
 
             else:
-                cv2.putText(image, "Locked", (250, 450), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 255), 2)
+                cv2.putText(image, "Locked", (120, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                 cv2.imshow('Face Cropper', image)
+                myTime = 0
 
         except:
-            cv2.putText(image, "Face Not Found", (250, 450), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 2)
-            cv2.imshow('Face Cropper', image)
+            cv2.putText(image, "Face Not Found", (120, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+            cv2.imshow('Face Cropper', image) 
+            myTime = 0
             pass
+        
         if cv2.waitKey(1)==13:
             break
+
+        endTime = time.time()
+        myTime+=endTime-startTime
+  
     cap.release()
     cv2.destroyAllWindows()
 
 while True:
     models = merge()
     run(models)
-    

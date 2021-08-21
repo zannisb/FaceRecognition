@@ -41,11 +41,9 @@ def trains():
             print("Facial data of " + model + " already exists.")
             continue
         train(model,path)
-
     return 0  
 
 while True:
     trains()
     exit()
-
 

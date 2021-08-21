@@ -43,7 +43,7 @@ def take_pictures(name):
     cap.release()
     cv2.destroyAllWindows()
     print('Colleting Samples Complete!!!')
-    
+
 while True:
     user_name = input()
     take_pictures(user_name)
