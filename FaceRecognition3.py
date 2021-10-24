@@ -61,7 +61,7 @@ def run(models):
             cv2.putText(image,display_string,(50,120), cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,1),2)
             cv2.putText(image, 'cogn_time='+str(round(myTime, 2)), (40, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
             if confidence >= 85:
-                if myTime >= 2:
+                if myTime >= 1:
                     cv2.putText(image, "Unlocked : " + min_score_name, (120, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
                     print(min_score_name)
                 cv2.imshow('Face Cropper', image)
