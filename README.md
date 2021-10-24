@@ -1,5 +1,5 @@
 # FacialRecognition
-📢 : OpenCV를 이용하여 제작한 얼굴 인식 기능으로, 후 https://autoclassroom.wixsite.com/website 의 웹사이트에 적용 예정입니다.
+📢 : OpenCV를 이용하여 제작한 얼굴 인식 기능으로, 후 https://way10201.github.io/hanmin_autoclassroom 의 웹사이트에 적용 예정입니다.
 
 
 본 어플리케이션은 다음과 같은 과정을 통하여 이용하실 수 있습니다.
@@ -20,19 +20,16 @@ pip install opencv-contrib-python
 만약 Numpy가 없는 경우 pip install numpy로 다운받아주시기 바랍니다.
 
 
-1. 본 소스코드를 다운로드한 후, faces라는 이름으로 폴더를 생성해주시기 바랍니다.
+1. FaceRecognition1.py를 실행해주시기 바랍니다.
 
-
-2. FaceRecognition1.py를 실행해주시기 바랍니다.
-
-창에 자신의 이름을 입력하면 faces 폴더 안에 자신의 이름의 폴더가 생성됩니다.
+**실행 후 창에 사용자이름을 입력하면 faces 폴더 안에 그 이름의 폴더가 생성됩니다.**
 
 카메라를 열어 얼굴 인식 한 후, 300장의 jpg 파일을 생성합니다.
 
 
 3. FaceRecognition2.py를 실행하면 생성된 사진을 가지고 학습합니다.
 
-학습된 결과는 "자신의 이름.xml" 파일을 생성한 후 저장됩니다. 
+학습된 결과는 "사용자이름.xml" 파일을 생성한 후 저장됩니다. 
 
 이미 학습된 결과가 있을 경우 "Facial data of 사용자이름 already exists." 라고 뜰 것입니다.
 
